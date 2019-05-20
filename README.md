@@ -1,4 +1,4 @@
-# R$^3$CNN: Regression Guided by Relative Ranking Using Convolutional Neural Network for Facial Beauty Prediction
+# R$$^3$$CNN: Regression Guided by Relative Ranking Using Convolutional Neural Network for Facial Beauty Prediction
 
 R^3CNN is a general CNN architecture to integrate the relative ranking of faces in terms of aesthetics to improve the performance of facial beauty prediction.
 
