@@ -16,7 +16,7 @@ https://github.com/HCIILAB/SCUT-FBP5500-Database-Release.
 Create a new folder named 'faces' and put in the images of SCUT-FBP5500. The train and test files have been provided in our data folder.
 
 ## Training
-The training code will be public later. 
+The training code will be released later. 
 
 ## Cross Validation
 1. Download the trained ResNeXt-based R<sup>3</sup>CNN caffemodel from:
@@ -29,7 +29,7 @@ The training code will be public later.
 ```python ./test_forward.py ```
 
 ## Contact Us
-For any questions, please feel free to contact Luojun Lin (linluojun2009@126.com) or Prof. Jin (eelwjin@scut.edu.cn).
+For any questions, please feel free to contact Dr. Lin (linluojun2009@126.com) or Prof. Jin (eelwjin@scut.edu.cn).
 
 ## Copyright
 This code is free to the academic community for research purpose only. For commercial purpose usage, please contact Prof. Lianwen Jin (eelwjin@scut.edu.cn).
