@@ -11,60 +11,61 @@ R<sup>3</sup>CNN is a general CNN architecture to integrate the relative ranking
 
 ## Installation
 + Build caffe
-```
-make all -j16
-make test
-make pycaffe
-```
+   ```
+   make all -j16
+   make test
+   make pycaffe
+   ```
 
 + Add the python directory of caffe into the environment variable
    + Open bash file:
     `sudo gedit ~/.bashrc`
    + Add the following setence into the file:
-   `export PYTHONPATH=brl/caffe/python:$PYTHONPATH`
+    `export PYTHONPATH=brl/caffe/python:$PYTHONPATH`
    + Update the environment variable:
    `source ~/.bashrc`
    
 ## Preparation
-+ Dataset download: our method is trained and verified on the SCUT-FBP5500 benchmark [Download](     
-https://github.com/HCIILAB/SCUT-FBP5500-Database-Release). The folder containing facial images is renamed as 'faces' and put under './examples/data', where train and test set have been already provided.
++ Dataset download: 
+  
+  Our method is trained and verified on [SCUT-FBP5500 benchmark dataset](https://github.com/HCIILAB/SCUT-FBP5500-Database-Release). The folder of images is renamed as 'faces', and put under './examples/data' directory, where train and test set have been already provided.
 
 + Image pairs generation: 
-```
-cd examples/data/
-python create_pair.py
-```
+   ```
+   cd examples/data/
+   python create_pair.py
+   ```
 
 + Mean file computation:
-```
-sh mean.sh
-```
+   ```
+   sh mean.sh
+   ```
    
 ## Training
 + First stage: conventional training for ResNeXt-based regression model, using pretrained model on ImageNet (download link: https://pan.baidu.com/s/12AtCeQYuYDZtUd9jZPIo1w  password: enfc):
-```
-cd examples/first_stage
-sh train.sh
-```
- 
-+ Second stage:
-   + rename the caffemodel obtained in the first stage as the format of 'R2Net_hinge_iter_0.caffemodel' (download link: https://pan.baidu.com/s/1Dx3H108gCvJ71fcVg3BzjQ  password: p3jk) ;
-   + put R2Net_hinge_iter_0.caffemodel under 'examples/hinge_loss/snapshot/1';
-   + use hinge loss to train  R<sup>3</sup>CNN:
    ```
-   cd examples/hinge_loss
+   cd examples/first_stage
    sh train.sh
    ```
-   + if using LSEP loss to train R<sup>3</sup>CNN, you can run 'examples/lsep_loss/train.sh'；
-   + if using other backbone networks (i.e., AlexNet and ResNet-18) to train R<sup>3</sup>CNN, you can run the codes in './examples/other_networks';
+
++ Second stage:
+   + Rename the caffemodel obtained in the first stage as the format of 'R2Net_hinge_iter_0.caffemodel' (download link: https://pan.baidu.com/s/1Dx3H108gCvJ71fcVg3BzjQ  password: p3jk) ;
+   + Put R2Net_hinge_iter_0.caffemodel under 'examples/hinge_loss/snapshot/1';
+   + Use hinge loss to train  R<sup>3</sup>CNN:
+      ```
+      cd examples/hinge_loss
+      sh train.sh
+      ```
+   + If using LSEP loss to train R<sup>3</sup>CNN, you can run 'examples/lsep_loss/train.sh'；
+   + If using other backbone networks (i.e., AlexNet and ResNet-18) to train R<sup>3</sup>CNN, you can run the codes in './examples/other_networks';
 
 ## Validation
 + The trained ResNeXt-based R<sup>3</sup>CNN caffemodel is available at https://pan.baidu.com/s/1YVwKrBZS4kpNWHTRs-9qTA  password: xcx7 (1.6GB)
 + Run the testing file:
-```
-cd examples/test_inference
-python test_forward.py 
-```
+   ```
+   cd examples/test_inference
+   python test_forward.py 
+   ```
 
 ## Citation
 Please cite our paper:
