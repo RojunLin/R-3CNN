@@ -1,0 +1,17 @@
+# The train/test net protocol buffer definition
+net: "./resnext_train.prototxt"
+test_initialization: true
+test_iter: 55
+test_interval: 5000
+base_lr: 0.001
+momentum: 0.9
+weight_decay: 0.0001
+lr_policy: "step"
+stepsize: 4000
+gamma: 0.1
+display: 1000
+max_iter: 20000
+snapshot: 10000
+snapshot_prefix: "./snapshot/1/resnext50"
+solver_mode: GPU
+clip_gradients: 1000

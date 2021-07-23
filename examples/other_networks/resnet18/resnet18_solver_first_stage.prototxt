@@ -1,0 +1,16 @@
+net: "./resnet18_train_first_stage.prototxt"
+test_initialization: true
+test_iter: 1
+test_interval: 10000
+base_lr: 0.001
+lr_policy: "step"
+stepsize: 5000
+gamma: 0.5
+display: 200
+max_iter: 20000
+momentum: 0.9
+weight_decay: 0.0001
+snapshot: 10000
+snapshot_prefix: "./snapshot/1/resnet18"
+solver_mode: GPU
+

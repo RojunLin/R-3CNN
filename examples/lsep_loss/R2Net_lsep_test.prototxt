@@ -1,0 +1,13 @@
+name: "resnext50_test"
+layer {
+  name: "accuracy"
+  type: "Python"
+  top: "accuracy"
+  top: "mae"
+  top: "loss"
+  python_param {
+    module: "correlation"
+    layer: "CorrelationLayer"
+    param_str: "{\'network_file\': \'./resnext_deploy.prototxt\', \'snapshot_prefix\': \'./snapshot/1/R2Net_lsep_iter_\',\'snapshot_iter\': 5000, \'mean_file\': \'../data/1/256_train_mean.binaryproto\', \'roots\': \'../data/faces/\', \'file\': \'../data/1/test_1.txt\'}"
+  }
+}

@@ -1,0 +1,13 @@
+name: "alexnet_R2Net_hinge_test"
+layer {
+  name: "accuracy"
+  type: "Python"
+  top: "accuracy"
+  top: "mae"
+  top: "loss"
+  python_param {
+    module: "correlation_227"
+    layer: "CorrelationLayer"
+    param_str: "{\'network_file\': \'./alexnet_deploy.prototxt\', \'snapshot_prefix\': \'./snapshot/1/alexnet_R2Net_hinge_iter_\',\'snapshot_iter\': 5000, \'mean_file\': \'../../data/1/256_train_mean.binaryproto\', \'roots\': \'../../data/faces/\', \'file\': \'../../data/1/test_1.txt\'}"
+  }
+}
