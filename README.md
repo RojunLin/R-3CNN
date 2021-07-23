@@ -10,14 +10,14 @@ R<sup>3</sup>CNN is a general CNN architecture to integrate the relative ranking
 * skimage
 
 ## Installation
-+ Build caffe
++ Build Caffe
    ```
    make all -j16
    make test
    make pycaffe
    ```
 
-+ Add the python directory of caffe into the environment variable
++ Add the python directory into the environment variables
    + Open bash file:
     `sudo gedit ~/.bashrc`
    + Add the following setence into the file:
@@ -28,7 +28,7 @@ R<sup>3</sup>CNN is a general CNN architecture to integrate the relative ranking
 ## Preparation
 + Dataset download: 
   
-  Our method is trained and verified on [SCUT-FBP5500 benchmark dataset](https://github.com/HCIILAB/SCUT-FBP5500-Database-Release). The folder of images is renamed as 'faces', and put under './examples/data' directory, where train and test set have been already provided.
+  Our method is trained and verified on [SCUT-FBP5500 benchmark dataset](https://github.com/HCIILAB/SCUT-FBP5500-Database-Release). The facial images should be put under `examples/data/faces`, where train and test set have been already provided.
 
 + Image pairs generation: 
    ```
@@ -50,14 +50,14 @@ R<sup>3</sup>CNN is a general CNN architecture to integrate the relative ranking
 
 + Second stage:
    + Rename the caffemodel obtained in the first stage as the format of 'R2Net_hinge_iter_0.caffemodel' (download link: https://pan.baidu.com/s/1Dx3H108gCvJ71fcVg3BzjQ  password: p3jk) ;
-   + Put R2Net_hinge_iter_0.caffemodel under 'examples/hinge_loss/snapshot/1';
+   + Put 'R2Net_hinge_iter_0.caffemodel' under `examples/hinge_loss/snapshot/1`;
    + Use hinge loss to train  R<sup>3</sup>CNN:
       ```
       cd examples/hinge_loss
       sh train.sh
       ```
-   + If using LSEP loss to train R<sup>3</sup>CNN, you can run 'examples/lsep_loss/train.sh'；
-   + If using other backbone networks (i.e., AlexNet and ResNet-18) to train R<sup>3</sup>CNN, you can run the codes in './examples/other_networks';
+   + If using LSEP loss to train R<sup>3</sup>CNN, you can run `examples/lsep_loss/train.sh`；
+   + If using other backbone networks (i.e., AlexNet and ResNet-18) to train R<sup>3</sup>CNN, you can run the codes in `./examples/other_networks`;
 
 ## Validation
 + The trained ResNeXt-based R<sup>3</sup>CNN caffemodel is available at https://pan.baidu.com/s/1YVwKrBZS4kpNWHTRs-9qTA  password: xcx7 (1.6GB)
